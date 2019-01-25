@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Sagar Kalyan</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.1/examples/album/album.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/header/header.css' %}">
+	<link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+	</style>
+  </head>
+
+  <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(function()
+  {
+    $(".menu-toggle").on("click",function(){
+      // $("#menu-primary").slideToggle();
+      $(".menu-primary").toggleClass('menu-expand');
+    })
+  })
+});
+</script>
+<header>
+  <div class="div-header">
+
+    <div class="logo">
+      <a href="http://www.sagarkalyan.com">
+     <!-- <img src="images/home/logo-name.png" alt="logo" width="auto" height="38" style="margin-top:3px;" /> -->
+     <div class="logoname" >Sagar<span id="span-peek">Kalyan</span>.com</div>  
+      </a>
+    </div>
+
+    <div class="nav-bar">
+      <nav id="site-navigation" class="main-navigation">
+        <button class="menu-toggle"><i class="fas fa-bars fa-lg"></i> Menu</button>
+         <ul class="menu-primary">
+           <a href="#"><li>Youtube</li></a>
+           <a href="#"><li>Blogs</li></a>
+           <a href="#"><li>About Me</li></a>
+         </ul>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Sagar Kalyan</h1>
+        <img src="{% static '20181230_192000.jpg' %}" width="250px">
+         <p class="lead text-muted">Hi ! Welcome to My Daily Blogs.</p>
+
+          <p>
+            <a href="#" class="btn btn-primary my-2">More About Me</a>
+         <!--   <a href="#" class="btn btn-secondary my-2">Secondary action</a>  -->
+          </p>
+        </div>
+      </section>
+
+     <!-- <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+               {% for myapp in myapps.all %}
+            <div class="col-md-4">
+            <a href="{% url 'detail' myapp.id %}">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top"  src="{{ myapp.image.url }}">
+                <div class="card-body">
+                  <p class="card-text">{{ myapp.summary }}</p>
+                </div>
+              </div>
+            </a>
+            </div>
+            </div>
+             {% endfor %}
+          </div>  
+		   
+        </div>  -->
+         
+<div class="div-main">
+  <div class="head"><h3>BLOGS</h3></div>
+  <div class="posts">
+<!-- https://i.ytimg.com/vi/N-S8qAQBquI/maxresdefault.jpg
+https://i.ytimg.com/vi_webp/N-S8qAQBquI/maxresdefault.webp
+-->
+    {% for myapp in myapps.all %}
+	 <a href="{% url 'detail' myapp.id %}">
+    <div class="single-post">
+      <div class="img"><a href="{% url 'detail' myapp.id %}"> <img class="card-img-top"  src="{{ myapp.image.url }}"></a></div>
+      <div class="title-post"><a href="{% url 'detail' myapp.id %}">{{ myapp.summary }}</a></div>
+    </div>
+	</a>
+	 {% endfor %}
+    <div class="more"><a href="#">More Posts >> </a></div>
+  </div>
+
+</div>
+ 
+
+    </main>
+
+
+
+
+
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p> &copy; Sagarkalyan (2019)</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
